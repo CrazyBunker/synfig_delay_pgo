@@ -1,4 +1,10 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+##
+#   Author: Vladislav Plotkin aka Jake Dog
+#   e-mail: vlad@krasnodar-it-service.ru	
+#   web:    https://vlad.krsanodar-it-service.ru
+##
 import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True,
@@ -21,8 +27,7 @@ for line in in_f.readlines():
         out_f = u'\t' + str(int(line.replace('\t',''))+delay)+'\n'
     elif count == 11:
         out_f = u'\t\t' + str(int(line.replace('\t\t',''))+delay)+'\n'
-		#out_f = str(int(string[0])+delay)
-    elif u'\t\t\t\t' in line.decode('utf-8'): #and line[4].isalpha():
+    elif u'\t\t\t\t' in line.decode('utf-8'):
         string = line.replace('\t\t\t\t','').split(' ')
         out_f = u'\t\t\t\t' + str(int(string[0])+delay)+' '+string[1]
         out_file.write(out_f.encode('utf-8'))
